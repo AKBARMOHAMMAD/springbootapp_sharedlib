@@ -1,4 +1,4 @@
-def call(string repourl){
+def call(String repoUrl){
     pipeline{
         agent any
         tools{
@@ -15,7 +15,7 @@ def call(string repourl){
         stage('checkout code'){
             stpes{
                 git branch: 'master',
-                url : "${repourl}"
+                url : "${repoUrl}"
             }
         }
         stage('cleaning workspace'){
