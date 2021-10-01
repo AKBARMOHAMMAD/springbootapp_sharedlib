@@ -37,7 +37,7 @@ def call(String repoUrl){
         stage('deploy'){
             steps{
                 sshagent(['tomcat_user']) {
-                    sh "scp -o StrictHostKeyChecking=no target/my.war ec2-user@3.94.167.10:/opt/tomcat/webapp"
+                    sh "scp -o StrictHostKeyChecking=no target/my.war ec2-user@3.94.167.10:/opt/tomcat/webapps"
     
             }
                 
