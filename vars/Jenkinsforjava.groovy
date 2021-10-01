@@ -34,11 +34,15 @@ def call(String repoUrl){
                 sh 'mv target/*.war target/my.war'
             }
         }
-       // stage('deploy'){
-       //     steps{
+        stage('deploy'){
+            steps{
+                sshagent(['tomcat_user']) {
+                    sh "scp -o StrictHostKeyChecking=no target/my.war ec2-user@3.94.167.10:/opt/tomcat/webapp"
+    
+            }
                 
-         //   }
-       // }
+            }
+        }
     }
 }
 }
