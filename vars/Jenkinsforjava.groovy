@@ -31,8 +31,13 @@ def call(String repoUrl){
         stage('packaging application'){
             steps{
                 sh 'mvn package -DskipTests'
+                sh 'mv target/*.war target/my.war'
             }
         }
-    }
+       // stage('deploy'){
+       //     steps{
+                
+         //   }
+       // }
     }
 }
